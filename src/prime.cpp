@@ -11,7 +11,7 @@ bool isPrimeHalf(int n, long long* modOps) {
     if(n <= 1){
         return false;
     }
-    if(n == 2){
+    if(n == 2||n == 3){
         if(modOps != nullptr){
             (*modOps)++;
         }
@@ -37,7 +37,7 @@ bool isPrimeSqrt(int n, long long* modOps) {
     if(n <= 1){
         return false;
     }
-    if(n == 2){
+    if(n == 2||n == 3){
         if(modOps != nullptr){
             (*modOps)++;
         }
