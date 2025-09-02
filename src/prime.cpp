@@ -1,5 +1,4 @@
 //prime.cpp
-#include <cmath>
 #include "prime.hpp"
 
 // TODO: Implement isPrimeHalf
@@ -11,13 +10,16 @@ bool isPrimeHalf(int n, long long* modOps) {
     if(n <= 1){
         return false;
     }
-    if(n == 2||n == 3){
-        if(modOps != nullptr){
-            (*modOps)++;
-        }
+    if(n<=3){
         return true;
     }
-    for(int i = 2; i <= n/2; i++) {
+    if(modOps != nullptr){
+            (*modOps)++;
+        }
+    if(n % 2 == 0){
+        return false;
+    }
+    for(int i = 3; i <= n/2; i+=2) {
         if(modOps != nullptr){
             (*modOps)++;
         }
@@ -37,13 +39,16 @@ bool isPrimeSqrt(int n, long long* modOps) {
     if(n <= 1){
         return false;
     }
-    if(n == 2||n == 3){
-        if(modOps != nullptr){
-            (*modOps)++;
-        }
+    if(n<=3){
         return true;
     }
-    for (int i = 2; i <= sqrt(n); i++) {
+    if(modOps != nullptr){
+            (*modOps)++;
+        }
+    if(n % 2 == 0){
+        return false;
+    }
+    for (int i = 3; i*i <= n; i+=2) {
         if(modOps != nullptr){
             (*modOps)++;
         }
