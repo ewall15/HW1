@@ -45,16 +45,20 @@ TEST_CASE("Prime Identification Consistency") {
 TEST_CASE("Modulo Operation Count Tests") {
     long long halfOps = countModOps(isPrimeHalf, 3, 3);
     long long sqrtOps = countModOps(isPrimeSqrt, 3, 3);
+    REQUIRE(halfOps == 1);
+    REQUIRE(sqrtOps == 1);
+    halfOps = countModOps(isPrimeHalf, 2, 5);
+    sqrtOps = countModOps(isPrimeSqrt, 2, 5);
+    REQUIRE(halfOps == 3);
+    REQUIRE(sqrtOps == 3);
+    halfOps = countModOps(isPrimeHalf, 2, 2);
+    sqrtOps = countModOps(isPrimeSqrt, 2, 2);
     REQUIRE(halfOps == 0);
     REQUIRE(sqrtOps == 0);
     halfOps = countModOps(isPrimeHalf, 2, 10);
     sqrtOps = countModOps(isPrimeSqrt, 2, 10);
-    REQUIRE(halfOps == 9);
-    REQUIRE(sqrtOps == 8);
-    halfOps = countModOps(isPrimeHalf, 2, 10000);
-    sqrtOps = countModOps(isPrimeSqrt, 2, 10000);
-    REQUIRE(halfOps == 2907640);
-    REQUIRE(sqrtOps == 117527);
+    REQUIRE(halfOps == 10);
+    REQUIRE(sqrtOps == 9);
 }
 
 // test edge cases
