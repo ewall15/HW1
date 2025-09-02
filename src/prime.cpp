@@ -11,6 +11,12 @@ bool isPrimeHalf(int n, long long* modOps) {
     if(n <= 1){
         return false;
     }
+    if(n == 2){
+        if(modOps != nullptr){
+            (*modOps)++;
+        }
+        return true;
+    }
     for(int i = 2; i <= n/2; i++) {
         if(modOps != nullptr){
             (*modOps)++;
@@ -30,6 +36,12 @@ bool isPrimeSqrt(int n, long long* modOps) {
     // Remember to count modulo operations when modOps is not nullptr
     if(n <= 1){
         return false;
+    }
+    if(n == 2){
+        if(modOps != nullptr){
+            (*modOps)++;
+        }
+        return true;
     }
     for (int i = 2; i <= sqrt(n); i++) {
         if(modOps != nullptr){
