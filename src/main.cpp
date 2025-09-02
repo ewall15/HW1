@@ -3,7 +3,7 @@
 #include "prime.hpp"
 
 int main() {
-    constexpr int LO = 2, HI = 10;
+    constexpr int LO = 4, HI = 4;
     
     // TODO: Count modulo operations for both algorithms
     long long halfOps = countModOps(isPrimeHalf, LO, HI);
